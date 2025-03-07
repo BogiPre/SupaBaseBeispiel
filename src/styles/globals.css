@@ -4,35 +4,35 @@
 
 @layer base {
   h2 {
-    @apply py-4 text-4xl font-black text-gray-800;
+    @apply py-4 text-3xl font-bold text-gray-800;
   }
 
   .button {
-    @apply custom-focus rounded-full border-2 border-green-400 bg-white px-8 py-2 font-bold text-green-400 hover:bg-green-400 hover:text-white focus:bg-green-400 focus:text-white;
+    @apply custom-focus rounded-full border-2 border-green-500 bg-white px-6 py-2 font-medium text-green-500 transition-colors duration-200 hover:bg-green-500 hover:text-white focus:bg-green-500 focus:text-white;
   }
 
   .button-inverse {
-    @apply custom-focus rounded-full border-2 border-white bg-green-400 px-8 py-2 font-bold text-white hover:border-green-400 hover:bg-white hover:text-green-400 focus:border-green-400 focus:bg-white focus:text-green-400;
+    @apply custom-focus rounded-full border-2 border-transparent bg-green-500 px-6 py-2 font-medium text-white transition-colors duration-200 hover:border-green-500 hover:bg-white hover:text-green-500 disabled:cursor-not-allowed disabled:opacity-70;
   }
 
   .card {
-    @apply column min-w-[20rem] items-center gap-8 rounded-2xl bg-white py-8 px-4 shadow-md sm:min-w-[24rem] sm:px-10;
+    @apply column min-w-[20rem] items-center gap-6 rounded-2xl bg-white py-8 px-6 shadow-sm sm:min-w-[24rem] sm:px-8;
   }
 
   .column {
-    @apply flex flex-col items-start justify-center gap-4;
+    @apply flex flex-col items-start justify-center gap-3;
   }
 
   .custom-focus {
-    @apply focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2;
+    @apply focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2;
   }
 
   .heading {
-    @apply text-lg font-semibold text-gray-700;
+    @apply text-lg font-medium text-gray-700;
   }
 
   .highlight {
-    @apply ml-1 rounded-lg bg-gray-100 p-2 font-mono;
+    @apply ml-1 rounded-lg bg-gray-100 p-2 font-mono text-gray-800;
   }
 
   .error {
@@ -40,14 +40,27 @@
   }
 
   .input {
-    @apply custom-focus w-full rounded-xl border border-slate-300 focus:shadow-none;
+    @apply custom-focus w-full rounded-lg border border-gray-300 px-4 py-2 text-gray-800 shadow-sm transition-colors focus:border-green-400 focus:shadow-none;
   }
 
   .link {
-    @apply custom-focus rounded-md font-semibold text-green-400;
+    @apply custom-focus rounded-md font-medium text-green-500 transition-colors hover:text-green-600;
   }
 
   .row {
-    @apply flex flex-row items-center justify-start gap-1;
+    @apply flex flex-row items-center justify-start gap-2;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gray-300 hover:bg-gray-400;
   }
 }
